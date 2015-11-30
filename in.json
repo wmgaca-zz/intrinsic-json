@@ -1,0 +1,16 @@
+{
+
+    "this": "is",
+    "an": {"Fn::Env": ["WHAT_IS_THIS", "example"]},
+    "nested": {"Fn::Env": ["THIS", {"Fn::Join": ["-", ["foo", "bar"]]}]},
+    "a_bit_more_nested": [
+        {"Fn::Join": ["_", ["like", "this"]]}
+    ],
+    "or": {
+        "even": {"Fn::Env": ["THAT", "a.default.that"]}
+    },
+    "or_even": {"Fn::Split": [{"Fn::Env": ["SEPARATOR", "."]}, "Split.This.By.Dots"]},
+    "gimmie_4": {"Fn::Int": {"Fn::Select": [4, [0, 1, 2, 3, "4"]]}},
+    "gimmie_TRU": {"Fn::Bool": ["true"]},
+    "gimmie_666": {"Fn::Int": ["666"]}
+}
